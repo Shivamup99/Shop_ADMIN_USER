@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/lara-light-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeflex/primeflex.css';
+@import '~animate.css/animate.css';
+
+
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box
+}
+body{
+  overflow-x: hidden !important;
+}
+
+a{
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}

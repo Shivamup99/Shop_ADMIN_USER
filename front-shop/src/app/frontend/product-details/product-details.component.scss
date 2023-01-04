@@ -1,0 +1,41 @@
+.products-detail{
+  padding:90px 65px;
+  margin-top: 50px;
+.product-name{
+  font-size: 2em;
+}
+.product-desc{
+  font-size: 1.4em;
+}
+.pro-rating{
+  margin: 15px 0;
+}
+.pro-price{
+  font-size: 1.6em;
+  font-weight: 800;
+  border-bottom: 1px solid var(--surface-300);
+  padding: 20px 0;
+  color: rgb(204, 85, 72);
+  .price-before{
+    font-size: 0.6em;
+    margin-left: 10px;
+    font-weight: 300;
+    color: gray;
+    text-decoration: line-through;
+  }
+}
+.product-quant{
+  margin: 25px 0;
+  label{
+    font-size: 1em;
+  }
+  .p-button{
+    background-color: rgb(211, 66, 13);
+    border: none;
+  }
+}
+.about{
+  line-height: 1.6;
+  letter-spacing: 1.2px;
+}
+}

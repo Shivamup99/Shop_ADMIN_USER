@@ -1,0 +1,39 @@
+<p-toast></p-toast>
+<div class="admin-category">
+  <p-card [header]="editmode ? 'Edit Category':'Add Category'" subheader="List of all category">
+
+    <div class="grid mb-3">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"> </div>
+            <div class="p-toolbar-group-right">
+              <p-button (click)="onSubmit()" [label]="editmode ? 'Update':'Create'" styleClass="p-button-primary mr-4" [icon]="editmode ?'pi pi-pencil':'pi pi-plus'"></p-button>
+              <p-button (onClick)="onCancle()" label="Cancel" styleClass="p-button-secondary" icon="pi pi-times"></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="grid p-3">
+      <div class="col-12">
+        <form [formGroup]="form">
+          <div class="formgrid grid">
+            <div class="field col">
+                <label for="name">Title</label>
+                <input formControlName="name" id="name" pInputText type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                <small class="p-error" *ngIf="categoryForm['name'].invalid && isSubmitted">Name is required !</small>
+              </div>
+            <div class="field col">
+                <label for="icon">Icon</label>
+                <input formControlName="icon" id="icon" pInputText type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                <small *ngIf="categoryForm['icon'].invalid && isSubmitted" class="p-error">Icon is required !</small>
+              </div>
+              <div class="field col ml-4">
+                <label for="color">Color</label> <br/>
+                <p-colorPicker formControlName="color"></p-colorPicker>
+              </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </p-card>
+  </div>

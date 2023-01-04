@@ -1,0 +1,51 @@
+<p-toast></p-toast>
+<div class="admin-category">
+<p-card header="Users" subheader="List of all user">
+
+  <div class="grid">
+    <div class="col-12">
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <p-button label="New" styleClass="p-button-success" icon="pi pi-plus" routerLink="/users/form"></p-button>
+        </div>
+      </p-toolbar>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12">
+      <p-table [paginator]="true" [rows]="6" [value]="users"  [tableStyle]="{'width': '100%'}" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+            <tr>
+
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                <th>Email</th>
+                <th>User Role</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+            <tr>
+
+                <td>{{user.name}}</td>
+                <!-- just updating icon for promeicons -->
+                <td>{{user.email}}</td>
+                <td>
+                  <p-tag  *ngIf="user.isAdmin"  severity="success" value="Admin"></p-tag>
+                  <p-tag *ngIf="!user.isAdmin"  value="User"></p-tag>
+                </td>
+                <!-- <td>{{getCountryName(user.country)}}</td> -->
+                <td>{{user.city}}</td>
+                <td>
+                  <p-button (click)="deleteUser(user.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
+                  <p-button (click)="updateUser(user.id)" styleClass="p-button-success" icon="pi pi-pencil"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+  </div>
+</p-card>
+</div>
+<!-- for confirmation to delete the category -->
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>

@@ -1,0 +1,7 @@
+.admin-wrapper{
+  height: 100%;
+  .admin-content{
+    width: calc(100% - 180px);
+    margin-left: 180px;
+  }
+}

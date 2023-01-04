@@ -1,0 +1,17 @@
+.d-item{
+  display:flex;
+  text-align:center;
+  //color: var(--surface-0);
+  justify-content: space-between;
+  .pi{
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  .order{
+    font-size: 1rem;
+  }
+  .number{
+    font-size: 1.9rem;
+    margin-top: 35px;
+  }
+}

@@ -1,0 +1,31 @@
+header{
+  padding: 0px 55px;
+  position: fixed;
+  width: 100%;
+  top:0;
+  img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .menu{
+    padding-top: 40px;
+    a{
+      margin-left: 25px;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+  }
+  .tools{
+    padding-top: 40px;
+    .pi{
+      margin-left: 20px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+  .search{
+    padding-top: 30px;
+  }
+}

@@ -1,0 +1,45 @@
+<p-toast></p-toast>
+<div class="admin-category">
+<p-card header="Categories" subheader="List of all category">
+
+  <div class="grid">
+    <div class="col-12">
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <p-button label="New" styleClass="p-button-success" icon="pi pi-plus" routerLink="/categories/form"></p-button>
+        </div>
+      </p-toolbar>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-12">
+      <p-table [value]="categories"  [tableStyle]="{'width': '100%'}" styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+            <tr>
+
+                <th pSortableColumn="name">Title <p-sortIcon field="name"></p-sortIcon></th>
+                <th>Icon</th>
+                <th>Color</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-category>
+            <tr>
+
+                <td>{{category.name}}</td>
+                <!-- just updating icon for promeicons -->
+                <td><i style="font-size: 1.5rem;" class="pi" [ngClass]="'pi-'+category.icon"></i></td>
+                <td><i class="pi pi-circle-on" style="font-size: 1.5rem;" [ngStyle]="{color:category.color}"></i></td>
+                <td>
+                  <p-button (click)="deleteCategory(category.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
+                  <p-button (click)="updateCategory(category.id)" styleClass="p-button-success" icon="pi pi-pencil"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+  </div>
+</p-card>
+</div>
+<!-- for confirmation to delete the category -->
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>

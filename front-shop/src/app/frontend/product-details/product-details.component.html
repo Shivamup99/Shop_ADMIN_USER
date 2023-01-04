@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="products-detail" *ngIf="product">
+  <div class="grid">
+    <div class="col-6">
+      <app-product-gallery [images]="product.images"></app-product-gallery>
+    </div>
+    <div class="col-6" >
+      <h3 class="product-name">{{product.name}}</h3>
+      <p class="desc">
+        {{product.description}}
+      </p>
+      <div class="pro-rating">
+        <p-rating [(ngModel)]="product.rating" [cancel]="false"></p-rating>
+      </div>
+      <div class="pro-price">
+        {{product.price | currency}}
+        <span class="price-before">{{product.price  | currency}}</span>
+      </div>
+       <div class="product-quant">
+        <div class="field col-12 md:col-3">
+          <label for="stacked">Product Quantity</label>
+          <p-inputNumber [(ngModel)]="quantity" [showButtons]="true" inputId="quantity" [min]="0" [max]="100">
+          </p-inputNumber>
+      </div>
+       </div>
+       <div class="product-action">
+        <button (onclick)="addToCart()" pButton pRipple type="button" icon="pi pi-shopping-cart" class="p-button-rounded p-button-warning mr-4"></button>
+        <button pButton pRipple type="button" label="Buy Now" class="p-button-raised p-button-help p-button-text"></button>
+       </div>
+    </div>
+  </div>
+  <div class="grid about">
+    <div class="col-12">
+      <div [innerHTML]="product.about"></div>
+    </div>
+  </div>
+</div>
