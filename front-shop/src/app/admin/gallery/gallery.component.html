@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<form [formGroup]="form">
+  <div class="pro-images">
+    <img *ngFor="let url of urls" [src]="url" alt="sj">
+    <input formControlName="images" type="file" (change)="selectFiles($event)" multiple >
+
+  </div>
+
+</form>
+
+<button (click)="onSubmit()">Submit</button>

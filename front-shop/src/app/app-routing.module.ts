@@ -1,3 +1,4 @@
+import { GalleryComponent } from './admin/gallery/gallery.component';
 import { ProductDetailsComponent } from './frontend/product-details/product-details.component';
 import { ProductsShopComponent } from './frontend/products-shop/products-shop.component';
 import { HomeComponent } from './frontend/home/home.component';
@@ -31,7 +32,8 @@ const routes: Routes = []=[
      {path:'orders/:id',component:OrderDetailComponent},
      {path:'users',component:UserListComponent},
      {path:'users/form',component:AddUserComponent},
-     {path:'users/form/:id',component:AddUserComponent}
+     {path:'users/form/:id',component:AddUserComponent},
+     {path:'products/gallery/:id',component:GalleryComponent}
   ]
  },
  {path:'login',component:LoginComponent},

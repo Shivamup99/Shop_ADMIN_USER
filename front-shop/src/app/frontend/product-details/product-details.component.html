@@ -2,11 +2,12 @@
 <div class="products-detail" *ngIf="product">
   <div class="grid">
     <div class="col-6">
-      <app-product-gallery [images]="product.images"></app-product-gallery>
+      <!-- <app-product-gallery [images]="product.images"></app-product-gallery> -->
+      <img [src]="product.image" alt="product" width="100%">
     </div>
-    <div class="col-6" >
+    <div class="col-6 p-2" >
       <h3 class="product-name">{{product.name}}</h3>
-      <p class="desc">
+      <p class="desc mt-1">
         {{product.description}}
       </p>
       <div class="pro-rating">
@@ -29,9 +30,11 @@
        </div>
     </div>
   </div>
+  <hr/>
   <div class="grid about">
-    <div class="col-12">
+    <div class="col-12 mt-2">
       <div [innerHTML]="product.about"></div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

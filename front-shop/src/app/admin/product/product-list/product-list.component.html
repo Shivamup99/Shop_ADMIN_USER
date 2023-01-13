@@ -30,7 +30,7 @@
         <ng-template pTemplate="body" let-product>
             <tr>
 
-                <td>{{product.name}}</td>
+                <td [title]="product.name">{{product.name | slice:0:30}}</td>
                 <td>
                   <img [src]="product.image" alt="ddd" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                 </td>

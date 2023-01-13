@@ -55,16 +55,22 @@
           </div>
 
 
-
-          <div class="field col-12">
+          <div class="p-fluid formgrid grid">
+          <div  class="field col-12">
             <label for="image">Thumbnail Image</label>
             <input type="file" class="p-inputtext" accept="image/*" style="cursor: pointer;"
             (change)="onImageUpload($event)" >
-            <div class="col-2 mt-2 pl-0">
+            <div class="col-3 mt-2 pl-0">
               <img [src]="imageDisplay" style="width: 100%;"/>
             </div>
             <small *ngIf="productForm['image'].invalid && isSubmitted" class="p-error">Image is required !</small>
 
+          </div>
+          <!-- <div class="field col-4" *ngIf="editmode">
+            <label for="image">Product Gallery</label><br/>
+             <button class="pro-btn" (click)="galleryPage()">Upload Product Gallery Image</button>
+
+          </div> -->
           </div>
 
           <div class="field col-12">

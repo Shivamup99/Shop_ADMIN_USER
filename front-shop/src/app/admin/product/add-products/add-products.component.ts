@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { timer } from 'rxjs';
 import { CategoryService } from '../../services/category/category.service';
@@ -19,7 +19,7 @@ export class AddProductsComponent implements OnInit {
    imageDisplay!:string | ArrayBuffer;
    currentProductId!:string
 
-  constructor(private productService:ProductService,private categoryService:CategoryService,private route:ActivatedRoute,private formBuilder:FormBuilder,private messageService:MessageService,private location:Location){}
+  constructor(private productService:ProductService,private categoryService:CategoryService,private route:ActivatedRoute,private router:Router,private formBuilder:FormBuilder,private messageService:MessageService,private location:Location){}
   ngOnInit(): void {
     this._initForm();
     this._getCategories();
@@ -122,6 +122,10 @@ export class AddProductsComponent implements OnInit {
        })
      }
     })
+   }
+
+   galleryPage(){
+    this.router.navigateByUrl(`products/gallery/${this.currentProductId}`)
    }
 
    onCancel(){

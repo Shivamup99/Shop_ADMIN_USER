@@ -52,4 +52,8 @@ export class ProductListComponent implements OnInit , OnDestroy {
   });
   }
 
+  // sortProductName(name:string){
+
+  // }
+
 }

@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import {CarouselModule} from 'primeng/carousel';
 import { TableModule } from 'primeng/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
@@ -24,6 +25,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { SidebarComponent } from './admin/shared/sidebar/sidebar.component';
 import { ShellComponent } from './admin/shared/shell/shell.component';
@@ -49,6 +51,9 @@ import { ProductsComponent } from './frontend/products/products.component';
 import { ProductsShopComponent } from './frontend/products-shop/products-shop.component';
 import { ProductDetailsComponent } from './frontend/product-details/product-details.component';
 import { ProductGalleryComponent } from './frontend/product-gallery/product-gallery.component';
+import { GalleryComponent } from './admin/gallery/gallery.component';
+import { FooterComponent } from './frontend/footer/footer.component';
+import { TrendingComponent } from './frontend/hero/trending/trending.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,17 +81,22 @@ import { ProductGalleryComponent } from './frontend/product-gallery/product-gall
     ProductsShopComponent,
     ProductDetailsComponent,
     ProductGalleryComponent,
+    GalleryComponent,
+    FooterComponent,
+    TrendingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxPaginationModule,
     CardModule,
     ButtonModule,
     InputTextModule,
     TableModule,
     ToolbarModule,
+    CarouselModule,
     FormsModule,
     ReactiveFormsModule,
     ConfirmDialogModule,

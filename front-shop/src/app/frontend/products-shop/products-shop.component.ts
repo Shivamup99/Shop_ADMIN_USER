@@ -15,6 +15,19 @@ export class ProductsShopComponent implements OnInit {
   categories:Category[]=[]
   checked: any;
   isCategoryPage:boolean | undefined
+  page = 1;
+  itemsPerPage = 6;
+  totalItems : any;
+  public directionLinks: boolean = true;
+  public autoHide: boolean = false;
+  public responsive: boolean = true;
+  public labels: any = {
+      previousLabel: '<--',
+      nextLabel: '-->',
+      screenReaderPaginationLabel: 'Pagination',
+      screenReaderPageLabel: 'page',
+      screenReaderCurrentLabel: `You're on page`
+  };
   constructor(private productService:ProductService,private categoryService:CategoryService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
